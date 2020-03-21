@@ -15,3 +15,17 @@ Code:
 fulldel -n
 OR
 fulldel --no-package
+
+Installation:
+
+NOTE: Do NOT extract fulldel to /usr/bin or any other system folder or it will break your system!
+Make sure to keep fulldel-Solus.tar.xz somewhere in your home folder and use the "install script" within
+the archive to install fulldel!
+
+Code:
+mkdir ~/Documents/fulldel
+cp /path/to/fulldel-Solus.tar.xz ~/Documents/fulldel
+cd ~/Documents/fulldel
+tar -xf ./fulldel-Solus.tar.xz
+chmod 775 ./install
+./install
