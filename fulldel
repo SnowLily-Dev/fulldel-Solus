@@ -1,0 +1,42 @@
+if [[ "$1" != "--no-package" && "$1" != "-n" && "$1" != "-h" && "$1" != "--help" && "$1" != "-p" ]];
+then
+    echo $0": E: Unknown flag or no flag specified!"
+    exit
+elif [[ $1 = "--no-package" ]];
+then
+    echo "--no-package flag active!"
+    echo $0 "will only clear apt package cache and execute eopkg rmo!"
+    sudo eopkg rmo
+    sudo rm -rf /var/cache/eopkg/*
+    echo $0": Finished!"
+
+elif [[ "$1" = "-n" ]];
+then
+        echo "-n flag active!"
+        echo "Will only clear cache and execute eopkg rmo!"
+        sudo eopkg rmo
+        sudo rm -rf /var/cache/eopkg/*
+        echo $0": Finished!"
+
+elif [[ "$1" = "--help" || "$1" = "-h" ]];
+then
+    echo $0":"
+    echo "Script for removing a package and clearing"
+    echo "cache with one easy command."
+    echo " "
+    echo "Usage:"
+    echo $0" [-h] [--help] [-n] [--no-package] [-p <packages>]"
+elif [[ "$1" = "-p" ]];
+then
+if [[ -z "$2" ]];
+then
+    echo "E: -p: No packages were specified!"
+    exit
+else
+        echo "Removing" ${@:2}"..."
+        sudo eopkg -y remove ${@:2}
+        sudo eopkg rmo
+        sudo rm -rf /var/cache/eopkg/*
+        echo $0": Removal of "${@:2}" completed and eopkg cache cleared!"
+fi
+fi
