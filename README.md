@@ -1,4 +1,6 @@
-# fulldel
+# fulldel-Solus
+(Fulldel for Solus uses eopkg instead of apt)
+
 fulldel is a script made for easily removing packages with the apt package manager and directly
 removing the apt cache and dependencies of recently removed or unused packages.
 Syntax for removing a package, it's dependencies and the apt cache:
