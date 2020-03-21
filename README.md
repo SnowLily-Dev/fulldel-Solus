@@ -2,7 +2,7 @@
 (Fulldel for Solus uses eopkg instead of apt)
 
 Fulldel(A.K.A. Full Delete) for Solus is a script made for easily removing packages with the apt package manager and directly
-removing the eopkg cache and dependencies of recently removed or unused packages.
+removing the eopkg cache and unnecessary dependencies of recently removed packages.
 Syntax for removing a package, it's dependencies and the apt cache:
 
 Code:
